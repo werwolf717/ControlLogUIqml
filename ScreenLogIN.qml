@@ -15,10 +15,14 @@ Rectangle {
     height: Constants.login_height
 
     color: Constants.backgroundColor
+    enabled: true
+    layer.enabled: true
 
     GridLayout {
         id: gridLayout
         anchors.fill: parent
+        enabled: false
+        layer.enabled: true
         anchors.rightMargin: 5
         transformOrigin: Item.Center
         rows: 4
@@ -44,7 +48,12 @@ Rectangle {
 
             TextField {
                 id: textField
+                visible: true
                 horizontalAlignment: Text.AlignHCenter
+                enabled: true
+                activeFocusOnTab: true
+                clip: false
+                hoverEnabled: true
                 Layout.minimumWidth: 240
                 Layout.maximumWidth: 240
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -136,6 +145,15 @@ Rectangle {
                 text: qsTr("Cancel")
                 Layout.fillHeight: false
             }
+        }
+
+        BusyIndicator {
+            id: busyIndicator
+            anchors.fill: parent
+            rightPadding: 20
+            bottomPadding: 20
+            topPadding: 20
+            leftPadding: 20
         }
     }
 }
