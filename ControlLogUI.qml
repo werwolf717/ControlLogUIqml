@@ -6,13 +6,13 @@ import ControlLogUI 1.0
 
 ApplicationWindow {
     id: mainScreen
-    width: Constants.login_width
-    height: Constants.login_height
+    width: Constants.width
+    height: Constants.height
     title: qsTr("UI")
 
 
 
-    ScreenLogIN
+    ScreenInput
     {
 
     }
