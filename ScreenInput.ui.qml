@@ -30,7 +30,7 @@ Rectangle {
             Label {
                 id: label
                 text: qsTr("ПО Журнал контроля")
-                anchors.fill: parent
+                //  anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 bottomPadding: 2
                 rightPadding: 2
@@ -47,16 +47,24 @@ Rectangle {
             id: columnLayout
             width: 100
             height: 100
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            Layout.rightMargin: 10
+            Layout.leftMargin: 10
 
             TabBar {
                 id: tabBar
                 height: 50
-                anchors.left: stackLayout.left
+
+
+                /*  anchors.left: stackLayout.left
                 anchors.right: stackLayout.right
-                anchors.bottom: stackLayout.top
+                anchors.bottom: stackLayout.top*/
+                rightPadding: 20
+                leftPadding: 20
                 font.capitalization: Font.MixedCase
-                Layout.rightMargin: 20
-                Layout.leftMargin: 20
+                Layout.rightMargin: 0
+                Layout.leftMargin: 0
                 Layout.fillWidth: true
                 Layout.fillHeight: false
                 TabButton {
@@ -88,42 +96,32 @@ Rectangle {
                     color: "#ffffff"
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-
-                    Label {
-                        id: label2
-                        text: qsTr("4545645")
-                        anchors.fill: parent
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                    }
                 }
 
                 Rectangle {
                     id: rectangle1
                     width: 200
                     height: 200
+                    visible: false
                     color: "#ffffff"
+                    Layout.preferredHeight: -1
+                    Layout.preferredWidth: -1
                     Layout.fillHeight: true
                     Layout.fillWidth: true
 
-                    Label {
-                        id: label1
-                        text: qsTr("Label")
+                    Frame {
+                        id: frame
                         anchors.fill: parent
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
                     }
                 }
             }
-
-
         }
     }
 }
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.5}
+    D{i:0;formeditorZoom:0.5}D{i:11}
 }
 ##^##*/
 
