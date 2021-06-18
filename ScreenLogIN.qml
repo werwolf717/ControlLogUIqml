@@ -50,9 +50,10 @@ Rectangle {
                 id: textField
                 visible: true
                 horizontalAlignment: Text.AlignHCenter
+                smooth: true
                 enabled: true
                 activeFocusOnTab: true
-                clip: false
+                clip: true
                 hoverEnabled: true
                 Layout.minimumWidth: 240
                 Layout.maximumWidth: 240
