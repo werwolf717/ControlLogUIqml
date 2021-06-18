@@ -8,6 +8,7 @@ import QtQuick.Studio.MultiText 1.0
 import QtQuick.Studio.LogicHelper 1.0
 import Qt.SafeRenderer 1.1
 import QtQuick3D 1.15
+import QtQuick 2.15
 
 Rectangle {
     width: Constants.width
@@ -161,6 +162,7 @@ Rectangle {
                                         RadioButton {
                                             id: radioButton
                                             text: qsTr("Считыватель")
+                                            font.pointSize: 12
                                             checked: true
                                             Layout.fillHeight: false
                                             Layout.fillWidth: false
@@ -170,6 +172,7 @@ Rectangle {
                                         RadioButton {
                                             id: radioButton1
                                             text: qsTr("Генератор азота")
+                                            font.pointSize: 12
                                             Layout.fillWidth: false
                                         }
                                     }
@@ -181,8 +184,32 @@ Rectangle {
                                     height: 200
                                     color: "#ffffff"
                                     border.width: 3
-                                    Layout.fillHeight: true
+                                    Layout.columnSpan: 1
+                                    Layout.preferredHeight: 100
+                                    Layout.fillHeight: false
                                     Layout.fillWidth: true
+
+                                    RowLayout {
+                                        id: rowLayout3
+                                        width: 100
+                                        height: 100
+
+                                        Label {
+                                            id: label2
+                                            text: qsTr("Помещение")
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            font.pointSize: 12
+                                            Layout.leftMargin: 25
+                                        }
+
+                                        ComboBox {
+                                            id: comboBox
+                                            Layout.preferredWidth: 250
+                                            Layout.rightMargin: 0
+                                            Layout.fillWidth: false
+                                        }
+                                    }
                                 }
 
                                 Rectangle {
@@ -191,8 +218,297 @@ Rectangle {
                                     height: 200
                                     color: "#ffffff"
                                     border.width: 3
+                                    Layout.preferredHeight: -1
                                     Layout.fillHeight: true
                                     Layout.fillWidth: true
+
+                                    ColumnLayout {
+                                        id: columnLayout2
+                                        anchors.fill: parent
+                                        spacing: 0
+
+                                        Label {
+                                            id: label3
+                                            text: qsTr("Допустимые пределы по справочнику")
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            font.pointSize: 12
+                                            Layout.topMargin: 20
+                                            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                                            Layout.leftMargin: 25
+                                            Layout.fillWidth: false
+                                        }
+
+                                        GridLayout {
+                                            id: gridLayout1
+                                            width: 100
+                                            height: 100
+                                            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                                            columnSpacing: -2
+                                            Layout.margins: 15
+                                            rows: 5
+                                            columns: 3
+                                            Layout.fillHeight: false
+                                            Layout.fillWidth: true
+
+                                            Rectangle {
+                                                id: rectangle10
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 0
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle8
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredWidth: 125
+                                                Layout.preferredHeight: 30
+                                                Layout.fillHeight: false
+                                                Layout.fillWidth: false
+
+                                                Label {
+                                                    id: label5
+                                                    color: "#ea0000"
+                                                    text: qsTr("ниж. предел")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignHCenter
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    font.pointSize: 12
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle9
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredWidth: 125
+                                                Layout.fillHeight: false
+                                                Layout.preferredHeight: 30
+
+                                                Label {
+                                                    id: label6
+                                                    color: "#ea0000"
+                                                    text: qsTr("верх. предел")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignHCenter
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    font.pointSize: 12
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle11
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.leftMargin: 0
+                                                Layout.preferredHeight: 30
+                                                Layout.fillHeight: false
+                                                Layout.fillWidth: true
+
+                                                Label {
+                                                    id: label7
+                                                    text: qsTr("Напряжение ФЭУ А, В")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignLeft
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    font.pointSize: 12
+                                                    anchors.leftMargin: 15
+                                                    leftInset: 0
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle12
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredWidth: 125
+                                                Layout.preferredHeight: 30
+                                                Layout.fillHeight: false
+                                                Layout.fillWidth: false
+
+                                                Label {
+                                                    id: label11
+                                                    text: qsTr("Test label")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignHCenter
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    layer.enabled: true
+
+                                                    Connections {
+                                                        target: label11
+                                                        /* function onClicked()
+                                                        {
+
+                                                        }*/
+                                                    }
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle13
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredWidth: 125
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: false
+                                                Layout.fillHeight: false
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle14
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+
+                                                Label {
+                                                    id: label8
+                                                    text: qsTr("Напряжение ФЭУ В, В")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignLeft
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    leftInset: 0
+                                                    anchors.leftMargin: 15
+                                                    font.pointSize: 12
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle15
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredWidth: 125
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: false
+                                                Layout.fillHeight: false
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle16
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredWidth: 125
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: false
+                                                Layout.fillHeight: false
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle17
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+
+                                                Label {
+                                                    id: label9
+                                                    text: qsTr("Температура блока питания, С")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignLeft
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    leftInset: 0
+                                                    anchors.leftMargin: 15
+                                                    font.pointSize: 12
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle18
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredWidth: 125
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: false
+                                                Layout.fillHeight: false
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle19
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredWidth: 125
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: false
+                                                Layout.fillHeight: false
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle20
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+
+                                                Label {
+                                                    id: label10
+                                                    text: qsTr("Температура теплообменника, С")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignLeft
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    leftInset: 0
+                                                    anchors.leftMargin: 15
+                                                    font.pointSize: 12
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle21
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredWidth: 125
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: false
+                                                Layout.fillHeight: false
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle22
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredWidth: 125
+                                                Layout.preferredHeight: 30
+                                                Layout.fillWidth: false
+                                                Layout.fillHeight: false
+                                            }
+
+                                        }
+                                    }
                                 }
 
                                 Rectangle {
@@ -203,6 +519,171 @@ Rectangle {
                                     border.width: 3
                                     Layout.fillHeight: true
                                     Layout.fillWidth: true
+
+                                    ColumnLayout {
+                                        id: columnLayout3
+                                        anchors.fill: parent
+                                        spacing: 0
+
+                                        Label {
+                                            id: label4
+                                            text: qsTr("Данные по оборудованию")
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            Layout.topMargin: 20
+                                            Layout.fillWidth: false
+                                            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                                            font.pointSize: 12
+                                            Layout.leftMargin: 25
+                                        }
+
+                                        GridLayout {
+                                            id: gridLayout2
+                                            width: 100
+                                            height: 100
+                                            rows: 4
+                                            columnSpacing: -2
+                                            Layout.fillWidth: true
+                                            Layout.margins: 15
+                                            Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                                            Layout.fillHeight: false
+
+                                            Rectangle {
+                                                id: rectangle26
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredHeight: 40
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+                                                Label {
+                                                    id: label13
+                                                    text: qsTr("Полное наименование")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignLeft
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    leftInset: 0
+                                                    anchors.leftMargin: 15
+                                                    font.pointSize: 12
+                                                }
+                                                Layout.leftMargin: 0
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle27
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                layer.enabled: false
+                                                Layout.preferredHeight: 40
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+                                                Layout.preferredWidth: -1
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle29
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredHeight: 40
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+                                                Label {
+                                                    id: label14
+                                                    text: qsTr("Краткое наименование")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignLeft
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    leftInset: 0
+                                                    anchors.leftMargin: 15
+                                                    font.pointSize: 12
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle30
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredHeight: 40
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+                                                Layout.preferredWidth: -1
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle32
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredHeight: 40
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+                                                Label {
+                                                    id: label15
+                                                    text: qsTr("Серийный номер")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignLeft
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    leftInset: 0
+                                                    anchors.leftMargin: 15
+                                                    font.pointSize: 12
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle33
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredHeight: 40
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+                                                Layout.preferredWidth: -1
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle35
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredHeight: 40
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+                                                Label {
+                                                    id: label16
+                                                    text: qsTr("Температура теплообменника, С")
+                                                    anchors.fill: parent
+                                                    horizontalAlignment: Text.AlignLeft
+                                                    verticalAlignment: Text.AlignVCenter
+                                                    leftInset: 0
+                                                    anchors.leftMargin: 15
+                                                    font.pointSize: 12
+                                                }
+                                            }
+
+                                            Rectangle {
+                                                id: rectangle36
+                                                width: 200
+                                                height: 200
+                                                color: "#ffffff"
+                                                border.width: 2
+                                                Layout.preferredHeight: 40
+                                                Layout.fillWidth: true
+                                                Layout.fillHeight: false
+                                                Layout.preferredWidth: -1
+                                            }
+                                            columns: 2
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -217,6 +698,28 @@ Rectangle {
                             Layout.margins: 25
                             Layout.fillWidth: true
                             Layout.fillHeight: true
+
+                            Button {
+                                id: button
+                                x: 0
+                                y: 0
+                                width: 49
+                                height: 48
+                                text: "Button"
+                                highlighted: false
+                                flat: true
+                                autoRepeat: false
+                                autoExclusive: false
+                                checkable: false
+                                checked: false
+                                display: AbstractButton.IconOnly
+
+                                BorderImage {
+                                    id: borderImage
+                                    anchors.fill: parent
+                                    source: "error.png"
+                                }
+                            }
                         }
                     }
                 }
@@ -237,7 +740,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.5}D{i:13}D{i:11}
+    D{i:0;formeditorZoom:0.5}D{i:19}D{i:38}D{i:42}D{i:46}D{i:48}D{i:23}D{i:51}D{i:52}
+D{i:50}D{i:13}D{i:11}
 }
 ##^##*/
-
